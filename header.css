@@ -7,26 +7,28 @@
 	--color-070: #635673;
 	--color-090: #4d4d4d;
 
-	--color-menu-link: var(--color-020);
+	--color-link-menu: var(--color-020);
 	--color-bg-main: var(--color-010);
-	--color-img-title: var(--color-000);
-	--color-img-text: var(--color-000);
+	--color-title-img: var(--color-000);
+	--color-text-img: var(--color-000);
 	--color-title-fancy: var(--color-020);
 	--color-text-main: var(--color-090);
 	--color-btn-bg: var(--color-070);
-	--color-btn-hover: var(--color-020); /* TODO -- to be defined */
+	--color-btn-bg-hover: var(--color-020); /* TODO -- to be defined */
 	--color-btn-text: var(--color-000);
 	--color-btn-text-hover: var(--color-000); /* TODO -- to be defined */
-    --color-box-dark: var(--color-030);
-    --color-box-dark-text: var(--color-000);
-    --color-box-light: var(--color-035);
-    --color-box-light-text: var(--color-090);
-    --color-box-light-title: var(--color-030);
-    --color-review-bg: var(--color-000);
-    --color-review-text: var(--color-030);
-
-	/* FONTS: text: raleway, menu: arcon, fancy-titles: belyDisplay  */
+    --color-bg-box-dark: var(--color-030);
+    --color-text-box-dark: var(--color-000);
+    --color-bg-box-light: var(--color-035);
+    --color-text-box-light: var(--color-090);
+    --color-title-box-light: var(--color-030);
+    --color-bg-review: var(--color-000);
+    --color-text-review: var(--color-030);
 }
+
+/* FONTS: text: raleway, menu: arcon, fancy-titles: belyDisplay  */
+
+
 a {
 	text-decoration: none;
 }
@@ -36,7 +38,7 @@ a:hover {
 }
 
 nav.main a {
-	color: ;
+	color: var(--color-link-menu);
 }
 
 header.main {
