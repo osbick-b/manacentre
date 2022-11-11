@@ -1,0 +1,52 @@
+:root {
+	--color-000: #fff;
+	--color-010: #e4d2c9;
+	--color-020: #875d4b;
+	--color-030: #996f8a;
+	--color-035: #dbc5c2;
+	--color-070: #635673;
+	--color-090: #4d4d4d;
+
+	--color-menu-link: var(--color-020);
+	--color-bg-main: var(--color-010);
+	--color-img-title: var(--color-000);
+	--color-img-text: var(--color-000);
+	--color-title-fancy: var(--color-020);
+	--color-text-main: var(--color-090);
+	--color-btn-bg: var(--color-070);
+	--color-btn-hover: var(--color-020); /* TODO -- to be defined */
+	--color-btn-text: var(--color-000);
+	--color-btn-text-hover: var(--color-000); /* TODO -- to be defined */
+    --color-box-dark: var(--color-030);
+    --color-box-dark-text: var(--color-000);
+    --color-box-light: var(--color-035);
+    --color-box-light-text: var(--color-090);
+    --color-box-light-title: var(--color-030);
+    --color-review-bg: var(--color-000);
+    --color-review-text: var(--color-030);
+
+	/* FONTS: text: raleway, menu: arcon, fancy-titles: belyDisplay  */
+}
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--color-000);
+}
+
+nav.main a {
+	color: ;
+}
+
+header.main {
+}
+
+.logo {
+}
+nav.main {
+}
+nav.main ul {
+}
+nav.main ul li {
+}
