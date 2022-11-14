@@ -29,6 +29,7 @@
 	--f-size-h1: 4.75rem; /* 76px */
 	--f-size-h2: 2.25rem; /* 36px */
 	--f-size-h3: 1.5rem; /* 24px */
+	--f-size-h3-fancy: 1.7rem; /* 27px */
 	--f-size-h4: 2rem; /* 32px */
 	--f-size-box-dark: 1.8rem; /* 29px */
 	--f-size-text-main: 1.125rem; /* 18px */
@@ -263,26 +264,45 @@ div.box-dark {
 h2.info {
 	text-transform: uppercase;
 	margin-bottom: 1rem;
+    margin-top: 4rem;
 	color: var(--c-title-fancy);
 }
 
 div.box-light {
 	padding: var(--p-main);
-	padding-top: 0.5rem;
-	margin: var(--p-main);
+	margin: 0 2rem 4rem;
 	background-color: var(--c-bg-box-light);
 }
 
-.box-light h3 {
+h3.module {
 	margin-top: 1.5rem;
 	font-weight: 800;
 	color: var(--c-title-box-light);
 }
+/* !!! edit margin-top from 1st title */
 
-.box-light span.marker {
+span.marker {
 	font-weight: normal;
 }
 
 ol.course-program {
 	list-style: none;
+}
+
+h3.fancy-subtitle {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+	font-family: "BelyDisplay", serif;
+	font-size: var(--f-size-h3-fancy);
+	text-transform: uppercase;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	letter-spacing: -1.91px;
+	text-align: left;
+	color: var(--c-title-box-light);
+}
+
+li ul.subtopics {
+	padding-left: var(--p-main);
 }
