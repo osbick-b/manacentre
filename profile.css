@@ -29,6 +29,8 @@
 	--f-size-h1: 4.75rem; /* 76px */
 	--f-size-h2: 2.25rem; /* 36px */
 	--f-size-h3: 1.5rem; /* 24px */
+	--f-size-h4: 2rem; /* 32px */
+	--f-size-box-dark: 1.8rem; /* 29px */
 	--f-size-text-main: 1.125rem; /* 18px */
 
 	--le-spacing-text-main: -0.037rem;
@@ -205,4 +207,42 @@ section.profile {
 
 img.profile {
     width: 50vw;
+}
+
+div.box-dark {
+	padding: 2rem 3rem; /*!!! check padding and add vars */
+	margin: 3rem 0; /*!!! check spacing and add vars */
+	background-color: var(--c-bg-box-dark);
+}
+
+.box-dark h4 {
+	font-size: var(--f-size-h4);
+	font-weight: 900;
+	font-stretch: normal;
+	font-style: normal;
+	/* line-height: 1.13; */
+	letter-spacing: normal;
+	text-transform: uppercase;
+	text-decoration: underline;
+	color: var(--c-text-box-dark);
+}
+
+.box-dark p {
+	font-size: var(--f-size-box-dark);
+	font-weight: bold;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1.24;
+	letter-spacing: normal;
+	text-align: center;
+    color: var(--c-text-box-dark);
+}
+
+.box-dark em {
+    font-style: italic;
+}
+
+.box-dark em.underline {
+    font-style: normal;
+    text-decoration: underline;
 }
