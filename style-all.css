@@ -132,7 +132,9 @@
 	--f-size-h3: 1.5rem; /* 24px */
 	--f-size-h3-fancy: 1.7rem; /* 27px */
 	--f-size-h4: 2rem; /* 32px */
-	--f-size-box-dark: 1.8rem; /* 29px */
+	--f-size-box-dark-large: 1.8rem; /* 29px */
+	--f-size-box-dark-medium: 1.6rem; /* 27px */
+	--f-size-box-dark-normal: 1.25rem; /* 20px */
 	--f-size-text-main: 1.125rem; /* 18px */
 	--f-size-price: 2.6rem; /* 42px */
 	--f-size-btn: 3.5rem; /* 56px */
@@ -144,8 +146,11 @@
 	--l-height-text-main: 1.5;
 
 	--p-main: 2rem; /*!!! -- p entre p.normal: 1.5. mudar e ver como fica */
-	--p-extra: 1rem;
 	--p-small: 1.5rem;
+	--p-mini: 0.5rem;
+	--p-large: 3rem;
+	--p-extra: 1rem;
+	--p-extra-xl: 2rem;
 }
 
 /* RESET BROWSER STYLES */
@@ -294,7 +299,8 @@ header.main a:hover {
 /* ========== TEXT MAIN STYLES ========== */
 h2 {
 /* h2.title-fancy { */
-	margin-bottom: var(--p-main);
+	margin-bottom: var(--p-main); /*!!!! remove and change to below */
+	/* margin: var(--p-extra-xl); */
 	font-family: "BelyDisplay", serif;
 	font-size: var(--f-size-h2);
 	font-weight: normal;
@@ -379,14 +385,19 @@ h1.hero {
 
 /* ------------------------------------------------------------------ */
 /* ========== PROFILE STYLES ========== */
-.wrapper > section.profile { /* !!! change to all sections if it works */
+.wrapper > section.profile,
+.wrapper > section.pros-and-cons { /* !!! change to all sections if it works */
 	display: flex;
 	flex-direction: column;
 	gap: var(--p-small);
 }
 
-section.profile p.normal {
+section.profile p.normal { /*!!! temporary -- just while the flex gap thing is not yet applied to all sections */
 	margin-bottom: 0;
+}
+
+section.profile h2 { /*!!! temporary -- just while the flex gap thing is not yet applied to all sections */
+	margin: var(--p-extra-xl);
 }
 
 .centered-box {
@@ -406,7 +417,7 @@ img.profile {
 div.box-dark {
 	padding: 2rem 3.3rem; /*!!! check padding and add vars */
 	background-color: var(--c-bg-box-dark);
-	margin: var(--p-extra) 0;
+	margin: var(--p-extra-xl) 0;
 }
 
 .title-box-dark {
@@ -422,13 +433,26 @@ div.box-dark {
 }
 
 .text-box-dark {
-	font-size: var(--f-size-box-dark);
 	font-stretch: normal;
 	font-style: normal;
-	line-height: 1.24;
 	letter-spacing: normal;
 	text-align: center;
 	color: var(--c-text-box-dark);
+}
+
+.text-box-dark.large {
+	font-size: var(--f-size-box-dark-large);
+	line-height: 1.25;
+}
+
+.text-box-dark.medium {
+	font-size: var(--f-size-box-dark-medium);
+	line-height: 1.3;
+	margin-bottom: var(--p-mini);
+}
+.text-box-dark.normal {
+	font-size: var(--f-size-box-dark-normal);
+	line-height: 1.5;
 }
 
 .box-dark em {
@@ -573,6 +597,11 @@ div.pros-cons {
 	gap: var(--p-main);
 }
 
+.box-light.pros,
+.box-light.cons {
+	padding-bottom: var(--p-large);
+}
+
 ul.cons,
 ul.pros {
 	display: flex;
@@ -581,11 +610,6 @@ ul.pros {
 	line-height: 1.25;
 	min-width: 30vw;
 }
-
-/* ul.cons li,
-ul.pros li {
-	margin-bottom: var(--p-small);
-} */
 
 .pros li::before {
 content: '✅';
@@ -605,4 +629,6 @@ strong.not {
 .title-box-light.spaced {
 	margin-bottom: var(--p-main);
 }
+
+
 
