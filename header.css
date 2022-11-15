@@ -83,6 +83,22 @@
        url('fonts/raleway-v28-latin-900italic.svg#Raleway') format('svg'); /* Legacy iOS */
 }
 
+@font-face {
+    font-family: 'BelyDisplay';
+    src: url('fonts/bely-display-w00-regular-webfont.woff2') format('woff2'),
+         url('fonts/bely-display-w00-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arcon';
+    src: url('fonts/arcon-regular-webfont.woff2') format('woff2'),
+         url('fonts/arcon-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 /* VARIABLES */
 :root {
