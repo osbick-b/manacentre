@@ -86,7 +86,8 @@
 @font-face {
     font-family: 'BelyDisplay';
     src: url('fonts/bely-display-w00-regular-webfont.woff2') format('woff2'),
-         url('fonts/bely-display-w00-regular-webfont.woff') format('woff');
+         url('fonts/bely-display-w00-regular-webfont.woff') format('woff'),
+         url('fonts/bely-display-w00-regular-webfont.ttf') format('ttf');
     font-weight: normal;
     font-style: normal;
 }
@@ -94,7 +95,8 @@
 @font-face {
     font-family: 'Arcon';
     src: url('fonts/arcon-regular-webfont.woff2') format('woff2'),
-         url('fonts/arcon-regular-webfont.woff') format('woff');
+         url('fonts/arcon-regular-webfont.woff') format('woff'),
+         url('fonts/arcon-regular-webfont.otf') format('otf');
     font-weight: normal;
     font-style: normal;
 }
