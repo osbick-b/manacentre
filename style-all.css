@@ -137,11 +137,15 @@
 	--f-size-price: 2.6rem; /* 42px */
 	--f-size-btn: 3.5rem; /* 56px */
 
+	--fw-strong: 800; /*!!!change to 700*/
+
 	--le-spacing-text-main: -0.037rem;
 
 	--l-height-text-main: 1.5;
 
-	--p-main: 2rem;
+	--p-main: 2rem; /*!!! -- p entre p.normal: 1.5. mudar e ver como fica */
+	--p-extra: 1rem;
+	--p-small: 1.5rem;
 }
 
 /* RESET BROWSER STYLES */
@@ -178,14 +182,18 @@ body {
 	align-items: center;
 }
 
-/* !!! HERO SECTION: needs editing */
 .wrapper > section.hero {
-	box-sizing: content-box;
+	box-sizing: content-box; /* !!! HERO SECTION: needs editing */
 }
 
 .wrapper > section {
 	width: 75vw; /*TODO --- media queries */
 }
+
+.wrapper > section.wide {
+	width: 90vw;
+}
+
 
 /* BASIC ELEMENTS */
 p,
@@ -228,9 +236,66 @@ ol {
 	color: var(--c-text-main);
 }
 
-/* INTRO */
+strong {
+	font-weight: var(--fw-strong);
+}
+
+/* //////////////////////////////////////////////////////////////// */
+/* ========== HEADER STYLES ========== */
+/* HEADER - Structure */
+header.main {
+  padding: 1.5rem;
+  /* margin-bottom: 3rem; */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1.5rem;
+	background-color: var(--color-bg-main);
+}
+
+/* HEADER - Child Elements structure */
+nav.main {
+}
+
+nav.main ul,
+.nav-social ul {
+	padding: 1rem 0;
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+}
+
+nav.main ul li,
+.nav-social ul li {
+	/* display: inline-block; */
+}
+
+/* HEADER - Link styles */
+header.main a {
+	color: var(--color-link-menu);
+	font-family: 'Arcon', sans-serif;
+  font-size: 19px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.47;
+  letter-spacing: 1.9px;
+}
+
+header.main a:hover {
+	color: var(--color-000);
+}
+
+/* HEADER - Logo */
+.logo {
+}
+
+
+/* ------------------------------------------------------------------ */
+/* ========== TEXT MAIN STYLES ========== */
 h2 {
-	font-family: "BelyDisplay", serif; /*TODO --- connect font properly */
+/* h2.title-fancy { */
+	margin-bottom: var(--p-main);
+	font-family: "BelyDisplay", serif;
 	font-size: var(--f-size-h2);
 	font-weight: normal;
 	font-stretch: normal;
@@ -260,6 +325,7 @@ h3.subtitle {
 p.normal,
 p.sidenote {
 	margin-bottom: 1.5rem;
+	/*!!! bc of displaying things with flex in profile section. pls check for ruining things */
 }
 p.check {
 }
@@ -267,8 +333,7 @@ p.check {
 p.normal strong,
 p.check strong,
 li strong {
-	font-weight: 800;
-	/*!!! CHANGE TO font-weight: 700; */
+	font-weight: var(--fw-strong); 
 }
 
 p.check::after {
@@ -280,7 +345,8 @@ p.sidenote {
 	font-style: italic;
 }
 
-/* INTRO - hero ini */
+/* ------------------------------------------------------------------ */
+/* ========== INTRO STYLES ========== */
 /* !!! HERO SECTION: needs editing: img should be width of other sections, and title */
 /* div.hero { */
 section.hero {
@@ -296,7 +362,7 @@ section.hero img {
 }
 
 h1.hero {
-	/* !!! TODO -- see to make text size responsive */
+	/* ??? -- see to make text size responsive */
 	position: absolute;
 	text-transform: uppercase;
 	text-align: center;
@@ -311,7 +377,18 @@ h1.hero {
 	color: var(--color-000);
 }
 
-/* ======== PROFILE STYLES ======== */
+/* ------------------------------------------------------------------ */
+/* ========== PROFILE STYLES ========== */
+.wrapper > section.profile { /* !!! change to all sections if it works */
+	display: flex;
+	flex-direction: column;
+	gap: var(--p-small);
+}
+
+section.profile p.normal {
+	margin-bottom: 0;
+}
+
 .centered-box {
 	display: flex;
 	flex-direction: column;
@@ -329,23 +406,23 @@ img.profile {
 div.box-dark {
 	padding: 2rem 3.3rem; /*!!! check padding and add vars */
 	background-color: var(--c-bg-box-dark);
+	margin: var(--p-extra) 0;
 }
 
-.box-dark h4 {
+.title-box-dark {
 	font-size: var(--f-size-h4);
-	font-weight: 900;
+	font-weight: 800;
 	font-stretch: normal;
 	font-style: normal;
-	/* line-height: 1.13; */
+	line-height: 1.5;
 	letter-spacing: normal;
 	text-transform: uppercase;
 	text-decoration: underline;
 	color: var(--c-text-box-dark);
 }
 
-.box-dark p {
+.text-box-dark {
 	font-size: var(--f-size-box-dark);
-	font-weight: bold;
 	font-stretch: normal;
 	font-style: normal;
 	line-height: 1.24;
@@ -365,9 +442,12 @@ div.box-dark {
 
 /* ======== PROGRAM STYLES ======== */
 /*!!! h2.fancy up there has been changed to simply h2 */
-
-h2.info {
+.tall {
 	text-transform: uppercase;
+}
+
+/* h2.info { */
+.title-fancy.tall {
 	margin-bottom: 1rem;
 	margin-top: 2rem;
 	color: var(--c-title-fancy);
@@ -375,8 +455,11 @@ h2.info {
 
 .box-light {
 	padding: var(--p-main);
-	margin: 0 2rem 4rem; /*??? check vals on mount*/
 	background-color: var(--c-bg-box-light);
+}
+
+.box-light.centered {
+	margin: 0 2rem 4rem; /*??? check vals on mount*/
 }
 
 /* div.box {
@@ -394,7 +477,7 @@ div.box-dark {
 /* .box-light h3,
 h3.module { */
 .title-box-light {
-	margin-top: 1.5rem; /* !!! edit margin-top from 1st title */
+	/* margin-top: 1.5rem; !!! edit margin-top from 1st title */
 	font-weight: 800;
 	color: var(--c-title-box-light);
 }
@@ -405,6 +488,9 @@ span.marker {
 
 ol.course-program {
 	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
 }
 
 /* h3.fancy-subtitle { */
@@ -460,7 +546,7 @@ p.cutout {
 
 strong.price {
 	text-decoration: underline;
-	font-weight: 900; /*!!! CHANGE TO 800 */
+	font-weight: var(--fw-strong);
 	font-size: var(--f-size-price);
 }
 
@@ -481,9 +567,25 @@ p.obs {
 
 
 /* *======== PROS-AND-CONS STYLES ======== */
-.pros-cons {
-
+div.pros-cons {
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	gap: var(--p-main);
 }
+
+ul.cons,
+ul.pros {
+	display: flex;
+	flex-direction: column;
+	gap: var(--p-small);
+	line-height: 1.25;
+	min-width: 30vw;
+}
+
+/* ul.cons li,
+ul.pros li {
+	margin-bottom: var(--p-small);
+} */
 
 .pros li::before {
 content: '✅';
@@ -494,3 +596,13 @@ padding: 0.2rem;
 content: '🚫';
 padding: 0.2rem;
 }
+
+strong.not {
+	font-weight: var(--fw-strong);
+	text-decoration: underline;
+}
+
+.title-box-light.spaced {
+	margin-bottom: var(--p-main);
+}
+
