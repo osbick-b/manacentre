@@ -179,7 +179,8 @@
 
 	--p-main: 2rem; /*!!! -- p entre p.normal: 1.5. mudar e ver como fica */
 	--p-small: 1.5rem;
-	--p-mini: 0.5rem;
+	--p-xs: 1rem;
+	--p-mini: 0.8rem;
 	--p-large: 3rem;
 	--p-extra: 1rem;
 	--p-extra-xl: 2rem;
@@ -216,7 +217,7 @@ body {
 }
 
 .wrapper {
-	width: 100vw;
+	max-width: 100vw; /** THIS IS REALLY IMPORTANT!!!! otherwise its not properly centered*/
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -291,13 +292,13 @@ strong {
 }
 
 /* //////////////////////////////////////////////////////////////// */
-/* ========== HEADER STYLES ========== */
+/* *========== HEADER STYLES ========== */
 /* HEADER - Structure */
-header.main,
 /* footer.main, */
+header.main,
 .footer-nav-wrapper {
 	width: 100vw;
-	padding: var(--p-large) var(--p-main);
+	padding: var(--p-large);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -306,9 +307,9 @@ header.main,
 	color: var(--c-link-menu);
 }
 
-/* HEADER - Child Elements structure */
-/* nav.main {
-} */
+footer.main {
+	margin-top: var(--p-extra);
+}
 
 nav.main ul {
 	display: flex;
@@ -328,11 +329,6 @@ nav.main ul {
 	gap: var(--p-small);
 }
 
-nav.main ul li,
-.nav-social ul li {
-	/* display: inline-block; */
-}
-
 /* HEADER - Link styles */
 header.main a,
 footer.main a {
@@ -348,9 +344,14 @@ header.main a {
 	font-size: var(--f-size-header);
 }
 
+footer i {
+	font-size: var(--f-size-mini);
+}
+
 footer.main a {
 	font-size: var(--f-size-footer);
 }
+
 
 header.main a:hover,
 header.main a:active,
@@ -363,9 +364,7 @@ footer.main a:hover {
 .logo {
 }
 
-footer.main {
-	margin-top: var(--p-extra);
-}
+
 
 /* ------------------------------------------------------------------ */
 /* ========== TEXT MAIN STYLES ========== */
@@ -383,10 +382,6 @@ h2 {
 	color: var(--c-title-fancy);
 }
 
-h3.subtitle {
-	/* margin: 3rem 0; */
-	margin: var(--p-extra);
-}
 
 h3.subtitle {
 	font-size: var(--f-size-h3);
@@ -397,6 +392,7 @@ h3.subtitle {
 	letter-spacing: normal;
 	text-align: left;
 	color: var(--c-text-main);
+	/* margin: var(--p-extra-xl) 0; */
 }
 
 p.normal,
@@ -723,16 +719,22 @@ ol.faq li {
 	margin-bottom: var(--p-main);
 }
 
+.spaced-xl-after {
+	/* margin-bottom: calc(var(--p-main) * 2); */
+	margin-bottom: var(--p-large);
+}
+
+.spaced-xxl-after {
+	margin-bottom: calc(var(--p-large) * 2);
+}
+
 .spaced-before {
 	margin-top: var(--p-main);
 }
 
-.spaced-xl-after {
-	margin-bottom: calc(var(--p-large) * 2);
-}
-
 .spaced-xl-before {
-	margin-top: calc(var(--p-large) * 2);
+	margin-top: var(--p-large);
+	/* margin-top: calc(var(--p-main) * 2); */
 }
 
 .box-light.obs {
@@ -797,8 +799,28 @@ p.hero {
 	text-align: center;
 } */
 
+footer img {
+	width: 7vw;
+}
 
-/* ?========== TEMP STYLES ========== */
-section {
-	border-bottom: 3px solid hotpink; /*!!! REMOVE - border test */;
+
+/* ========== IMAGE STYLES ========== */
+div.logo {
+
+}
+
+img.logo-img {
+	width: 15vw;
+}
+
+.fa-brands,
+.fa-regular {
+	color: var(--c-link-menu);
+	height: var(--f-size-header);
+}
+
+
+.fa-brands:hover,
+.fa-regular:hover {
+	color: var(--c-link-menu-hover);
 }
