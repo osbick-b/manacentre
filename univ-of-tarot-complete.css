@@ -138,6 +138,7 @@
 	--color-090: #4d4d4d;
 
 	--c-link-menu: var(--color-020);
+	--c-link-menu-hover: var(--color-000);
 	--c-bg-main: var(--color-010);
 	--c-title-img: var(--color-000);
 	--c-text-img: var(--color-000);
@@ -186,7 +187,9 @@
 	--w-box-dark: 75vw;
 }
 
-/* RESET BROWSER STYLES */
+
+
+/* ========== RESET BROWSER STYLES ========== */
 * {
 	padding: 0;
 	margin: 0;
@@ -206,7 +209,7 @@ img {
 	object-fit: cover;
 }
 
-/* STRUCTURE */
+/* ========== STRUCTURE ========== */
 body {
 	background-color: var(--c-bg-main);
 	overflow-x: hidden;
@@ -218,21 +221,31 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: space-between;
 }
 
-.wrapper > section.hero {
+main {
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--p-large);
+}
+
+.wrapper section.hero {
 	box-sizing: content-box; /* !!! HERO SECTION: needs editing */
 }
 
-.wrapper > section {
+.wrapper section {
 	width: 75vw; /*TODO --- media queries */
 }
 
-.wrapper > section.wide {
+.wrapper section.wide {
 	width: 90vw;
 }
 
-/* BASIC ELEMENTS */
+/* ========== BASIC STYLES ========== */
 p,
 h3,
 h4,
@@ -283,18 +296,19 @@ strong {
 header.main,
 /* footer.main, */
 .footer-nav-wrapper {
+	width: 100vw;
 	padding: var(--p-large) var(--p-main);
-	/* margin-bottom: 3rem; */
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	gap: 1.5rem;
+	gap: var(--p-large);
 	background-color: var(--color-bg-main);
+	color: var(--c-link-menu);
 }
 
 /* HEADER - Child Elements structure */
-nav.main {
-}
+/* nav.main {
+} */
 
 nav.main ul {
 	display: flex;
@@ -322,7 +336,7 @@ nav.main ul li,
 /* HEADER - Link styles */
 header.main a,
 footer.main a {
-	color: var(--color-link-menu);
+	color: var(--c-link-menu);
 	font-family: "Arcon", sans-serif;
 	font-weight: normal;
 	font-style: normal;
@@ -339,8 +353,10 @@ footer.main a {
 }
 
 header.main a:hover,
+header.main a:active,
+footer.main a:active,
 footer.main a:hover {
-	color: var(--color-000);
+	color: var(--c-link-menu-hover);
 }
 
 /* HEADER - Logo */
@@ -348,7 +364,7 @@ footer.main a:hover {
 }
 
 footer.main {
-	border-top: 3px solid --color-000;
+	margin-top: var(--p-extra);
 }
 
 /* ------------------------------------------------------------------ */
@@ -370,10 +386,6 @@ h2 {
 h2.fancy,
 h3.subtitle {
 	margin: 3rem 0;
-}
-
-h2.tall {
-	margin-bottom: var(--p-small);
 }
 
 h3.subtitle {
@@ -445,10 +457,10 @@ h2.hero {
 
 /* ------------------------------------------------------------------ */
 /* ========== PROFILE STYLES ========== */
-.wrapper > section.profile,
-.wrapper > section.program,
-.wrapper > section.pros-and-cons,
-.wrapper > section.faq {
+.wrapper section.profile,
+.wrapper section.program,
+.wrapper section.pros-and-cons,
+.wrapper section.faq {
 	/* !!! change to all sections if it works */
 	display: flex;
 	flex-direction: column;
@@ -537,13 +549,17 @@ div.box-dark {
 /* h2.info { */
 .title-fancy.tall {
 	/* margin-bottom: 1rem; */
-	margin-top: var(--p-extra-xl);
+	margin-top: var(--p-extra);
 	color: var(--c-title-fancy);
 }
 
 .box-light {
 	padding: var(--p-main);
 	background-color: var(--c-bg-box-light);
+}
+
+.box-light + .title-fancy.tall {
+	margin-top: calc(2*var(--p-extra-xl));
 }
 
 /* .box-light.centered { */
@@ -742,7 +758,6 @@ ol.faq li {
 	grid-template-columns: repeat(6, 1fr);
 }
 
-
 .hero-2 img {
 	object-fit: cover;
 }
@@ -789,3 +804,9 @@ p.hero {
 	width: 70vw;
 	text-align: center;
 } */
+
+
+/* ?========== TEMP STYLES ========== */
+section {
+	border-bottom: 3px solid hotpink; /*!!! REMOVE - border test */;
+}
