@@ -383,9 +383,9 @@ h2 {
 	color: var(--c-title-fancy);
 }
 
-h2.fancy,
 h3.subtitle {
-	margin: 3rem 0;
+	/* margin: 3rem 0; */
+	margin: var(--p-extra);
 }
 
 h3.subtitle {
@@ -467,15 +467,7 @@ h2.hero {
 	gap: var(--p-small);
 }
 
-section.profile p.normal {
-	/*!!! temporary -- just while the flex gap thing is not yet applied to all sections */
-	margin-bottom: 0;
-}
 
-section.profile h2 {
-	/*!!! temporary -- just while the flex gap thing is not yet applied to all sections */
-	margin: var(--p-extra-xl) 0;
-}
 
 .centered-box {
 	display: flex;
@@ -744,7 +736,7 @@ ol.faq li {
 }
 
 .box-light.obs {
-	padding: var(--p-small);
+	padding: var(--p-mini) var(--p-small);
 }
 
 /* ========== HERO END STYLES ========== */
