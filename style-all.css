@@ -136,6 +136,8 @@
 	--f-size-box-dark-medium: 1.6rem; /* 27px */
 	--f-size-box-dark-normal: 1.25rem; /* 20px */
 	--f-size-text-main: 1.125rem; /* 18px */
+	--f-size-header: 1.125rem; /* 18px */
+	--f-size-footer: 0.75rem; /* 18px */
 	--f-size-price: 2.6rem; /* 42px */
 	--f-size-btn: 3.5rem; /* 56px */
 	--f-size-mini: 1rem;
@@ -251,8 +253,10 @@ strong {
 /* //////////////////////////////////////////////////////////////// */
 /* ========== HEADER STYLES ========== */
 /* HEADER - Structure */
-header.main {
-  padding: 1.5rem;
+header.main,
+/* footer.main, */
+.footer-nav-wrapper {
+  padding: var(--p-large) var(--p-main);
   /* margin-bottom: 3rem; */
 	display: flex;
 	justify-content: space-between;
@@ -265,12 +269,22 @@ header.main {
 nav.main {
 }
 
-nav.main ul,
-.nav-social ul {
-	padding: 1rem 0;
+nav.main ul {
 	display: flex;
 	flex-direction: row;
-	gap: 1rem;
+	gap: var(--p-main);
+}
+
+.nav-social {
+	display: flex;
+	flex-direction: row;
+	gap: var(--p-mini);
+}
+
+.nav-footer {
+	display: flex;
+	flex-direction: row;
+	gap: var(--p-small);
 }
 
 nav.main ul li,
@@ -279,17 +293,26 @@ nav.main ul li,
 }
 
 /* HEADER - Link styles */
-header.main a {
+header.main a,
+footer.main a {
 	color: var(--color-link-menu);
 	font-family: 'Arcon', sans-serif;
-  font-size: 19px;
-  font-weight: normal;
-  font-style: normal;
-  line-height: 1.47;
-  letter-spacing: 1.9px;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 1.47;
+	letter-spacing: 1.9px;
 }
 
-header.main a:hover {
+header.main a {
+	font-size: var(--f-size-header);
+}
+
+footer.main a {
+	font-size: var(--f-size-footer);
+}
+
+header.main a:hover,
+footer.main a:hover  {
 	color: var(--color-000);
 }
 
@@ -297,6 +320,9 @@ header.main a:hover {
 .logo {
 }
 
+footer.main {
+	border-top: 3px solid --color-000;
+}
 
 /* ------------------------------------------------------------------ */
 /* ========== TEXT MAIN STYLES ========== */
@@ -373,7 +399,8 @@ section.hero img {
 	padding: 0 2rem;
 }
 
-h1.hero {
+h1.hero,
+h2.hero {
 	/* ??? -- see to make text size responsive */
 	position: absolute;
 	text-transform: uppercase;
@@ -675,3 +702,37 @@ ol.faq li{
 .box-light.obs {
 	padding: var(--p-small);
 }
+
+
+/* ========== HERO END STYLES ========== */
+.full-width {
+	width: 100vw;
+}
+
+.hero-2 {
+	display: grid;
+}
+
+.hero-2 img {
+	max-width: none;
+}
+
+.btn-small {
+
+}
+
+
+/* ========== FOOTER STYLES ========== */
+.divider {
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr, 10vw, 1fr;
+	/*!!! ver como faz com a linha e a img */
+}
+/* 
+.line {
+	height: 2px;
+	background-color: var(--color-000);
+	width: 70vw;
+	text-align: center;
+} */
