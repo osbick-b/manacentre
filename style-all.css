@@ -138,6 +138,7 @@
 	--f-size-text-main: 1.125rem; /* 18px */
 	--f-size-price: 2.6rem; /* 42px */
 	--f-size-btn: 3.5rem; /* 56px */
+	--f-size-mini: 1rem;
 
 	--fw-strong: 800; /*!!!change to 700*/
 
@@ -151,6 +152,8 @@
 	--p-large: 3rem;
 	--p-extra: 1rem;
 	--p-extra-xl: 2rem;
+
+	--w-box-dark: 75vw;
 }
 
 /* RESET BROWSER STYLES */
@@ -299,7 +302,6 @@ header.main a:hover {
 /* ========== TEXT MAIN STYLES ========== */
 h2 {
 /* h2.title-fancy { */
-	margin-bottom: var(--p-main); /*!!!! remove and change to below */
 	/* margin: var(--p-extra-xl); */
 	font-family: "BelyDisplay", serif;
 	font-size: var(--f-size-h2);
@@ -317,6 +319,10 @@ h3.subtitle {
 	margin: 3rem 0;
 }
 
+h2.tall {
+	margin-bottom: var(--p-small);
+}
+
 h3.subtitle {
 	font-size: var(--f-size-h3);
 	font-weight: 900;
@@ -330,7 +336,7 @@ h3.subtitle {
 
 p.normal,
 p.sidenote {
-	margin-bottom: 1.5rem;
+	/* margin-bottom: 1.5rem; */
 	/*!!! bc of displaying things with flex in profile section. pls check for ruining things */
 }
 p.check {
@@ -386,7 +392,9 @@ h1.hero {
 /* ------------------------------------------------------------------ */
 /* ========== PROFILE STYLES ========== */
 .wrapper > section.profile,
-.wrapper > section.pros-and-cons { /* !!! change to all sections if it works */
+.wrapper > section.program,
+.wrapper > section.pros-and-cons,
+.wrapper > section.faq { /* !!! change to all sections if it works */
 	display: flex;
 	flex-direction: column;
 	gap: var(--p-small);
@@ -418,6 +426,7 @@ div.box-dark {
 	padding: 2rem 3.3rem; /*!!! check padding and add vars */
 	background-color: var(--c-bg-box-dark);
 	margin: var(--p-extra-xl) 0;
+	width: var(--w-box-dark);
 }
 
 .title-box-dark {
@@ -427,8 +436,6 @@ div.box-dark {
 	font-style: normal;
 	line-height: 1.5;
 	letter-spacing: normal;
-	text-transform: uppercase;
-	text-decoration: underline;
 	color: var(--c-text-box-dark);
 }
 
@@ -452,14 +459,14 @@ div.box-dark {
 }
 .text-box-dark.normal {
 	font-size: var(--f-size-box-dark-normal);
-	line-height: 1.5;
+	line-height: 1.3;
 }
 
 .box-dark em {
 	font-style: italic;
 }
 
-.box-dark em.underline {
+.underline {
 	font-style: normal;
 	text-decoration: underline;
 }
@@ -472,8 +479,8 @@ div.box-dark {
 
 /* h2.info { */
 .title-fancy.tall {
-	margin-bottom: 1rem;
-	margin-top: 2rem;
+	/* margin-bottom: 1rem; */
+	margin-top: var(--p-extra-xl);
 	color: var(--c-title-fancy);
 }
 
@@ -482,8 +489,14 @@ div.box-dark {
 	background-color: var(--c-bg-box-light);
 }
 
-.box-light.centered {
-	margin: 0 2rem 4rem; /*??? check vals on mount*/
+/* .box-light.centered { */
+.inner-box {
+	margin: 0 var(--p-main); /*??? check vals on mount*/
+	/*!!! add 4rem margin below*/
+}
+
+.inner-box-thin {
+	margin: 0 calc(2*var(--p-main)); /*??? check vals on mount*/
 }
 
 /* div.box {
@@ -575,18 +588,18 @@ strong.price {
 }
 
 button.buy {
-	margin: 16.8px 23.1px 31.8px 51.5px;
-	padding: 24.2px 63px 28.6px 62.6px;
+	margin: var(--p-extra) 5vw; /*!!! margin side -- create var and standarize throughout doc */
+	padding: var(--p-small) var(--p-large);
 	border-radius: 26.5px;
 	box-shadow: 11.3px 17px 8.5px 0 rgba(7, 6, 6, 0.16);
 	background-color: var(--c-btn-bg);
 	color: var(--c-btn-text);
-	font-weight: 800;
+	font-weight: var(--fw-strong);
 	font-size: var(--f-size-btn);
 }
 
-p.obs {
-    font-size: 1rem;
+.obs {
+    font-size: var(--f-size-mini);
 }
 
 
@@ -598,7 +611,8 @@ div.pros-cons {
 }
 
 .box-light.pros,
-.box-light.cons {
+.box-light.cons, 
+.faq .box-dark {
 	padding-bottom: var(--p-large);
 }
 
@@ -626,9 +640,38 @@ strong.not {
 	text-decoration: underline;
 }
 
-.title-box-light.spaced {
+
+/* *========== FAQ STYLES ========== */
+
+ol.faq {
+	margin-top: var(--p-large);
+	display: flex;
+	flex-direction: column;
+	gap: var(--p-small);
+}
+
+ol.faq li{
+	font-size: var(--f-size-box-dark-normal);
+	font-weight: var(--fw-strong);
+	color: var(--c-text-box-dark);
+}
+
+.spaced-after {
 	margin-bottom: var(--p-main);
 }
 
+.spaced-before {
+	margin-top: var(--p-main);
+}
 
+.spaced-xl-after {
+	margin-bottom: calc(var(--p-large)*2);
+}
 
+.spaced-xl-before {
+	margin-top: calc(var(--p-large)*2);
+}
+
+.box-light.obs {
+	padding: var(--p-small);
+}
