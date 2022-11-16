@@ -325,7 +325,7 @@ strong {
 /* HEADER - Structure */
 /* footer.main, */
 header.main,
-.footer-nav-wrapper {
+.footer-content {
 	width: 100vw;
 	padding: var(--p-large);
 	display: flex;
@@ -336,8 +336,11 @@ header.main,
 	color: var(--c-link-menu);
 }
 
+.footer-content {
+	padding-top: var(--p-main);
+}
+
 footer.main {
-	margin-top: var(--p-extra);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -765,14 +768,17 @@ ol.faq li {
 
 .spaced-xl-before {
 	margin-top: var(--p-large);
-	/* margin-top: calc(var(--p-main) * 2); */
+}
+
+.spaced-xxl-before {
+	margin-top: calc(var(--p-large) * 2);
 }
 
 .box-light.obs {
 	padding: var(--p-mini) var(--p-small);
 }
 
-/* ========== HERO END STYLES ========== */
+/** ========== HERO END STYLES ========== */
 section.hero-2 {
 	display: grid;
 	grid-template-rows: repeat(3, auto);
@@ -811,7 +817,7 @@ p.hero {
 	padding: var(--p-mini) var(--p-main);
 }
 
-/* ========== FOOTER STYLES ========== */
+/** ========== FOOTER STYLES ========== */
 .divider {
 	width: 100vw;
 	display: grid;
@@ -820,7 +826,7 @@ p.hero {
 }
 .line {
 	grid-row: 2/3;
-	grid-column: 1/-1;
+	grid-column: 2/-2;
 	height: 1px;
 	width: 90vw;
 	background-color: var(--color-000);
