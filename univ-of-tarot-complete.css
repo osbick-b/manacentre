@@ -322,28 +322,14 @@ strong {
 /* //////////////////////////////////////////////////////////////// */
 /* *========== HEADER STYLES ========== */
 /* HEADER - Structure */
-/* footer.main, */
-header.main,
-.footer-content {
+header.main {
 	width: 100vw;
-	padding: var(--p-large);
+	padding: var(--p-main) var(--p-large);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	gap: var(--p-large);
-	background-color: var(--color-bg-main);
 	color: var(--c-link-menu);
-}
-
-.footer-content {
-	padding-top: var(--p-main);
-}
-
-footer.main {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-around;
 }
 
 nav.main ul {
@@ -356,12 +342,6 @@ nav.main ul {
 	display: flex;
 	flex-direction: row;
 	gap: var(--p-mini);
-}
-
-.nav-footer {
-	display: flex;
-	flex-direction: row;
-	gap: var(--p-small);
 }
 
 /* HEADER - Link styles */
@@ -379,18 +359,8 @@ header.main a {
 	font-size: var(--f-size-header);
 }
 
-footer i {
-	font-size: var(--f-size-mini);
-}
-
-footer.main a {
-	font-size: var(--f-size-footer);
-}
-
 header.main a:hover,
-header.main a:active,
-footer.main a:active,
-footer.main a:hover {
+header.main a:active {
 	color: var(--c-link-menu-hover);
 }
 
@@ -493,7 +463,6 @@ div.box-dark {
 	font-stretch: normal;
 	font-style: normal;
 	letter-spacing: normal;
-	text-align: center;
 	color: var(--c-text-box-dark);
 }
 
@@ -574,7 +543,7 @@ h3.module { */
 	color: var(--c-title-box-light);
 }
 
-span.marker {
+span.marker-module {
 	font-weight: normal;
 }
 
@@ -716,6 +685,7 @@ ol.faq {
 	display: flex;
 	flex-direction: column;
 	gap: var(--p-small);
+	list-style-position: inside; /*? Docs on positioning list markers: https://stackoverflow.com/questions/19364836/how-to-center-ordered-list-number-in-html  */
 }
 
 ol.faq li {
@@ -825,24 +795,75 @@ p.hero {
 }
 
 /** ========== FOOTER STYLES ========== */
+footer.main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.footer-content {
+	width: 100vw;
+	padding: var(--p-main) var(--p-large);
+	/* padding-top: var(--p-main); */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: var(--p-large);
+	color: var(--c-link-menu);
+}
+
+.nav-footer {
+	display: flex;
+	flex-direction: row;
+	gap: var(--p-small);
+}
+footer i {
+	font-size: var(--f-size-mini);
+}
+
+footer.main a {
+	font-size: var(--f-size-footer);
+}
+
+footer.main a:active,
+footer.main a:hover {
+	color: var(--c-link-menu-hover);
+}
+
+.paypal {
+	max-width: 10vw;
+}
+
 .divider {
 	width: 100vw;
+	height: var(--p-large);
 	display: grid;
 	grid-template-rows: 1fr 3px 1fr;
-	grid-template-columns: 5vw 1fr auto 1fr 5vw;
+	/* grid-template-columns: 5vw 1fr auto 1fr 5vw; */
+	grid-template-columns: 5vw 1fr 5vw;
 }
+
+.divider .divider-part {
+	justify-self: center;
+	align-self: center;
+}
+
 .line {
-	grid-row: 2/3;
-	grid-column: 2/-2;
+	/* grid-row: 2/3; */
+	grid-row: 1/-1;
+	/* grid-column: 2/-2; */
+	grid-column: 1/-1;
 	height: 1px;
-	width: 90vw;
+	width: 95vw;
 	background-color: var(--color-000);
 }
 
 .divider-decor {
-	width: 10vw;
+	height: var(--p-main);
 	grid-row: 1/-1;
-	grid-column: 3/4;
+	grid-column: 1/-1;
+	/* grid-column: 3/4; */
 }
 
 /** ========== IMAGE STYLES ========== */
