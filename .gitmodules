@@ -1,0 +1,3 @@
+[submodule "joyce-manacentre"]
+	path = joyce-manacentre
+	url = git@github.com:joycemendonca/manacentre.git
